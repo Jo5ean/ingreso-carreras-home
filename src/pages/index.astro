@@ -3,18 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import HeroSection from "../components/HeroSection.astro";
-import Form from "../components/Form.astro";
-import Carreras from "../components/Carreras.jsx";
+import Form from "../components/Form.astro";/* 
+import Carreras from "../components/Carreras.jsx"; */
+import Home from "../components/Home.astro";
 import Container from "../components/Container.astro";
 ---
 
 <Layout title="Inscripciones Abiertas - UCASAL">
   <Navbar />
   <HeroSection />
-  <Form />
+  <Form /><!-- 
   <Container>
     <Carreras client:only="react" />
-  </Container>
+  </Container> -->
+  <Home/>
   <Footer />
 </Layout>
 

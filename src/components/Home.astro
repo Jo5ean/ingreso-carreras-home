@@ -1,0 +1,126 @@
+---
+// Importa tu contenedor
+import Container from "./Container.astro";
+---
+
+<Container>
+  <div class="contenedor grid grid-cols-3 gap-3">
+    <div class="faq">
+      <h3 class="faq-title">Nomada</h3>
+      <p class="faq-text text-left ml-[2em]">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ad non eos fugiat, ab quisquam voluptatibus blanditiis aliquid doloribus dignissimos ipsa repellat, hic corrupti et possimus dicta dolor laboriosam tempore.
+      </p>
+      <button class="faq-toggle">
+        <img id="down" src="/public/landing/ingreso-carreras-ucasal/bx-chevron-down.svg">
+        <img id="x" src="/public/landing/ingreso-carreras-ucasal/bx-x.svg">
+      </button>
+    </div>
+    <div class="faq">
+      <h3 class="faq-title">Padre</h3>
+      <p class="faq-text text-left ml-[2em]">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ad non eos fugiat, ab quisquam voluptatibus blanditiis aliquid doloribus dignissimos ipsa repellat, hic corrupti et possimus dicta dolor laboriosam tempore.
+      </p>
+      <button class="faq-toggle">
+        <img id="down" src="/public/landing/ingreso-carreras-ucasal/bx-chevron-down.svg">
+        <img id="x" src="/public/landing/ingreso-carreras-ucasal/bx-x.svg">
+      </button>
+    </div>
+    <div class="faq">
+      <h3 class="faq-title">Lo otro</h3>
+      <p class="faq-text text-left ml-[2em]">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ad non eos fugiat, ab quisquam voluptatibus blanditiis aliquid doloribus dignissimos ipsa repellat, hic corrupti et possimus dicta dolor laboriosam tempore.
+      </p>
+      <button class="faq-toggle">
+        <img id="down" src="/public/landing/ingreso-carreras-ucasal/bx-chevron-down.svg">
+        <img id="x" src="/public/landing/ingreso-carreras-ucasal/bx-x.svg">
+      </button>
+    </div>
+  </div>
+</Container>
+
+<style>
+  /* .contenedor {
+    flex-direction: row;
+    gap: 1em;
+    position: relative;
+  } */
+  .faq {
+    background-color: wheat;
+    border-radius: 1em;
+    padding: 30px;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden; /* Asegúrate de que el contenido no sobresalga */
+  }
+  .faq-title {
+    font-size: larger;
+    font-weight: 600;
+  }
+  .faq-text {
+    text-align: left;
+    margin: 2em 0 0;
+    max-width: 100%; /* Cambia max-width en lugar de max-height */
+    height: 0; /* Ocultar por defecto */
+    overflow: hidden; /* Ocultar contenido que exceda el área visible */
+    transition: height 0.3s ease-out; /* Transición suave */
+  }
+  .faq.active .faq-text { 
+    height: 100px; /* Ajusta esto al contenido, permite mostrar */
+  }
+  .faq-toggle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    height: 30px;
+    width: 30px;
+    top: 30px;
+    right: 30px;
+    background-color: aqua;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  .faq-toggle:hover {
+    transform: scale(1.05);
+  }
+  #down {
+    display: block;
+  }
+  #x {
+    display: none;
+  }
+  .faq.active .faq-toggle #x {
+    display: block;
+  }
+  .faq.active .faq-toggle #down {
+    display: none;
+  }
+  .faq.active .faq-toggle {
+    background-color: red;
+  }
+</style>
+
+<script is:inline>
+  // Selecciona todos los elementos FAQ
+  const faqs = document.querySelectorAll('.faq');
+  
+  // Agrega un evento a cada botón
+  faqs.forEach((faq) => {
+    const button = faq.querySelector('.faq-toggle');
+    button.addEventListener('click', () => {
+      // Cierra todas las FAQ
+      faqs.forEach((item) => {
+        if (item !== faq) {
+          item.classList.remove('active');
+        }
+      });
+
+      // Alterna la FAQ activa
+      faq.classList.toggle('active');
+    });
+  });
+</script>

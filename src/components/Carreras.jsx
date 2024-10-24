@@ -1,23 +1,25 @@
 import Card from "./Card.jsx";
 import { datita } from "../scripts/datita.js";
 
-export default function Especializaciones() {
+export default function Carreras() {
   // Filtramos las carreras
   const filtrarCarreras = (carreras) =>
-    carreras.map((carrera) => ({
+    carreras
+    .filter((carrera) => carrera.modo.includes(7))
+    .map((carrera) => ({
       codcar: carrera.codcar,
       nomcar: carrera.nombre,
       duracion: carrera.duracion,
       modo: carrera.modo,
-      codare: carrera.codare, // Asegúrate de usar el nombre correcto
+      codare: carrera.codare, 
     }));
 
   return (
     <div>
       <Section
-        id="especializaciones"
+        id="Carreras"
         title="Conocé nuestras"
-        highlight="ESPECIALIZACIONES"
+        highlight="CARRERAS"
         carreras={filtrarCarreras(datita)}
       />
     </div>
