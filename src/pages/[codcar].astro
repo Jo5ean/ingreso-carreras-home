@@ -24,11 +24,7 @@ function getModeText(modoArray) {
     7: "Digital",
   };
 
-  if (modoArray.includes(1) && modoArray.includes(7)) {
-    return "Presencial y Digital";
-  } else if (modoArray.includes(1)) {
-    return modes[1];
-  } else if (modoArray.includes(7)) {
+  if (modoArray.includes(7)) {
     return modes[7];
   } else {
     return "no encontrada";

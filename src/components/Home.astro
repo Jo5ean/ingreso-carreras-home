@@ -1,0 +1,201 @@
+---
+// Importa tu contenedor
+import Container from "./Container.astro";
+---
+
+<Container>
+  <h2 class="bigTitle mt-5 shadow-black xs:text-xs">
+    <span style={{ color: "rgb(97, 96, 96)" }}>Conoce nuestra nueva</span>&nbsp;Modalidad:
+  </h2>
+  <div class="py-5 flex-col flex md:grid md:grid-cols-3 gap-3">
+    <div class="faq img-1 gap-2">
+      <h3 class="faq-title">Nomada</h3>
+      <p class="faq-text text-left ml-[2em]">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ad non eos fugiat, ab quisquam voluptatibus blanditiis aliquid doloribus dignissimos ipsa repellat, hic corrupti et possimus dicta dolor laboriosam tempore.
+      </p>
+      <button class="faq-toggle">
+        <img id="down" src="/landing/ingreso-carreras-ucasal/bx-chevron-down.svg">
+        <img id="x" src="/landing/ingreso-carreras-ucasal/bx-x.svg">
+      </button>
+    </div>
+    <div class="faq img-2 gap-2">
+      <h3 class="faq-title">Padre</h3>
+      <p class="faq-text text-left ml-[2em]">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ad non eos fugiat, ab quisquam voluptatibus blanditiis aliquid doloribus dignissimos ipsa repellat, hic corrupti et possimus dicta dolor laboriosam tempore.
+      </p>
+      <button class="faq-toggle">
+        <img id="down" src="/landing/ingreso-carreras-ucasal/bx-chevron-down.svg">
+        <img id="x" src="/landing/ingreso-carreras-ucasal/bx-x.svg">
+      </button>
+    </div>
+    <div class="faq img-3 gap-2">
+      <h3 class="faq-title">Lo otro</h3>
+      <p class="faq-text text-left ml-[2em]">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas ad non eos fugiat, ab quisquam voluptatibus blanditiis aliquid doloribus dignissimos ipsa repellat, hic corrupti et possimus dicta dolor laboriosam tempore.
+      </p>
+      <button class="faq-toggle">
+        <img id="down" src="/landing/ingreso-carreras-ucasal/bx-chevron-down.svg">
+        <img id="x" src="/landing/ingreso-carreras-ucasal/bx-x.svg">
+      </button>
+    </div>
+  </div>
+</Container>
+
+<script is:inline>
+  const faqs = document.querySelectorAll('.faq');
+  
+  faqs.forEach((faq) => {
+    const button = faq.querySelector('.faq-toggle');
+    button.addEventListener('click', () => {
+      const isActive = faq.classList.contains('active');
+      
+      faqs.forEach((item) => {
+        item.classList.remove('active');
+        item.classList.add('hidden-faq'); 
+      });
+
+      if (!isActive) {
+        faq.classList.add('active');
+        faqs.forEach((item) => {
+          if (item !== faq) {
+            item.style.display = 'none';
+          }
+        });
+      } else {
+        faqs.forEach((item) => {
+          item.style.display = 'block';
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+.faq {
+  background-color: wheat;
+  border-radius: 0.5em;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  gap: 3em;
+  transition: width 0.5s ease, opacity 0.5s ease;
+}
+.img-1{
+  background: linear-gradient(rgba(255,255,255,.25),
+  rgba(255,255,255,0.25)), url("/public/landing/ingreso-carreras-ucasal/banners/campus.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: ;
+  background-color: white;
+  background-size: cover;
+}
+.img-2{
+  background: linear-gradient(rgba(255,255,255,.25),
+  rgba(255,255,255,0.25)), url("/public/landing/ingreso-carreras-ucasal/cards/estudiar-analista-comercio-exterior.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: white;
+  background-size: cover;
+}
+.img-3{
+  background: linear-gradient(rgba(255,255,255,.25),
+  rgba(255,255,255,0.25)), url("/public/landing/ingreso-carreras-ucasal/cards/estudiar-lic-administracion-agropecuaria-distancia.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  background-size: cover;
+}
+/* Inicialmente el título está fuera de la vista (a la izquierda) */
+.faq-title {
+  font-size: larger;
+  font-weight: 600;
+  transform: translateX(0%); /* Comienza fuera del contenedor */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave al moverse */
+}
+
+/* Cuando la tarjeta está activa, el título se mueve a su posición original */
+.faq.active .faq-title {
+  transform: translateX(47%); /* Se traslada a su posición original */
+  opacity: 1; /* Se hace visible */
+}
+
+.faq-text {
+  text-align: left;
+  margin: 1.3em 0 0;
+  max-width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.faq.active .faq-text {
+  height: auto;
+  opacity: 1;
+  width: 100%;
+}
+
+.faq.active {
+  width: 100%;
+}
+
+.faq-toggle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  height: 30px;
+  width: 30px;
+  top: 22px;
+  right: 30px;
+  background-color: aqua;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-toggle:hover {
+  transform: scale(1.05);
+}
+
+#down {
+  display: block;
+}
+
+#x {
+  display: none;
+}
+
+.faq.active .faq-toggle #x {
+  display: block;
+}
+
+.faq.active .faq-toggle #down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: red;
+}
+@media (max-width: 768px){
+  .faq.active .faq-title {
+    transform: translateX(37%); /* Se traslada a su posición original */
+    opacity: 1; /* Se hace visible */
+  }
+}
+@media (min-width: 768px) {
+  .faq.active {
+    grid-column: span 3;
+  }
+  /* Cuando la tarjeta está activa, el título se mueve a su posición original */
+  .faq.active .faq-title {
+    transform: translateX(45%); /* Se traslada a su posición original */
+    opacity: 1; /* Se hace visible */
+  }
+}
+
+</style>
