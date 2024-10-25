@@ -1,13 +1,13 @@
 ---
 import Logo from "../components/Logo.astro";
-/* import BannerPromo from "./BannerPromo.astro";
- */import Container from "./Container.astro";
+import BannerPromo from "./BannerPromo.astro";
+import Container from "./Container.astro";
 import Button from "./Button.astro";
 ---
 
 <div class="fixed top-0 left-0 w-full z-50">
-<!--   <BannerPromo />
- -->  <nav class="bg-white bg-opacity-90 w-full border-b border-gray-200">
+  <BannerPromo />
+  <nav class="bg-white bg-opacity-90 w-full border-b border-gray-200">
     <Container>
       <div class="flex flex-wrap items-center justify-between p-1">
         <a href="#" class="flex items-center hover:scale-105" onclick="scrollToTop()">
