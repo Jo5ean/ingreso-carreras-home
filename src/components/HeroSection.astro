@@ -12,7 +12,9 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
   >
     <div class="absolute top-0 left-0 w-full h-full z-10 overlay"></div>
 
-    <div class="relative z-20 w-full" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));">
+    <d
+    
+    iv class="relative z-20 w-full" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));">
       <Container>
         <h1 class="block text-white py-2 text-left transform-gpu"
             style="
@@ -27,7 +29,7 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
             </span>
         </h1>
       </Container>
-    </div>      
+    </d>      
 
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
       <picture class="w-full h-full">
@@ -63,54 +65,48 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
       <div class="grid md:grid-cols-2 md:gap-4">
         <div class="text-gray-600 text-lg font-medium">
           <h2 class="text-3xl font-semibold my-3">
-            ¡Sé parte de <span class="text-red-600">hola edu</span>!
+            ¡Estudia Online, Viví Offline!
           </h2>
           <h3 class="text-xl">
-            Queremos ofrecerte mucho más que una carrera universitaria.
-            <br/>
-            Viví una <b>experiencia educativa</b> completamente diferente, en comunidad.
-            <br/>
-            Dá el primer paso, nosotros te acompañamos.
+            Esta modalidad 100% online está pensada para que puedas iniciar tu
+            formación profesional sin dejar de lado tu vida personal. Sin importar
+            dónde te encuentres, puedes rendir tus exámenes de manera virtual y
+            acceder a todos los recursos virtuales que ofrece nuestra Universidad.
           </h3>
-          <div class="cards">
+          <div class="cards flex justify-between">
             <div class="card bg-[#ee1818] p-2">
-              <Profesores class="object-cover rounded-t-lg"></Profesores>
-              <p class="text-md font-bold">Profesionales Dedicados</p>
-              <!-- <p class="text-xs">Disponibles toda la semana para vos</p> -->
+              <div class="flex justify-center">
+                <Profesores class="object-cover rounded-t-lg"></Profesores>
+              </div>
+              <p class="text-md font-bold">Flexibilidad</p>
             </div>
             <div class="card bg-[#ee1818] p-2">
-              <Online class="object-cover rounded-t-lg"></Online>
-              <p class="text-md font-bold">Profesionales Dedicados</p>
-              <!-- <p class="text-xs">Disponibles toda la semana para vos</p> -->
+              <div class="flex justify-center">
+                <Homeoffice class="object-cover rounded-t-lg"></Homeoffice>
+              </div>
+              <p class="text-md font-bold">Comodidad</p>
             </div>
             <div class="card bg-[#ee1818] p-2">
-              <Homeoffice class="object-cover rounded-t-lg"></Homeoffice>
-              <p class="text-md font-bold">Profesionales Dedicados</p>
-              <!-- <p class="text-xs">Disponibles toda la semana para vos</p> -->
+              <div class="flex justify-center">
+                <Online class="object-cover rounded-t-lg"></Online>
+              </div>
+              <p class="text-md font-bold">Innovación</p>
             </div>
-            
           </div>
         </div>
       </div>
     </Container>
-  </section>
+  </section>  
 </main>
 
 
 <style is:inline>
 .cards {
-  display: flex;
-  flex-direction: row;
   gap: 15px;
-  justify-content: center; /* Centra las tarjetas en la columna */
-  margin-top: 20px; /* Separación del texto */
+  margin-top: 20px;
 }
 
 .cards .card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;-
   width: 200px; /* Ajuste de tamaño de las tarjetas */
   border-radius: 10px;
