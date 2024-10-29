@@ -1,11 +1,10 @@
 ---
-// Importa tu contenedor
 import Container from "./Container.astro";
 ---
 
 <Container>
   <h2 class="bigTitle mt-5 shadow-black xs:text-xs">
-    <span style={{ color: "rgb(97, 96, 96)" }}>Conoce nuestra nueva</span>&nbsp;Modalidad:
+    <span style={{ color: "rgb(97, 96, 96)" }}>Que clase de estudiante</span>&nbsp;eres:
   </h2>
   <div class="py-5 flex-col flex md:grid md:grid-cols-3 gap-3">
     <div class="faq img-1 gap-2">
@@ -82,7 +81,7 @@ import Container from "./Container.astro";
 }
 .img-1{
   background: linear-gradient(rgba(255,255,255,.25),
-  rgba(255,255,255,0.25)), url("/public/landing/ingreso-carreras-ucasal/banners/campus.webp");
+  rgba(255,255,255,0.25)), url("/landing/ingreso-carreras-ucasal/banners/campus.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: ;
@@ -91,7 +90,7 @@ import Container from "./Container.astro";
 }
 .img-2{
   background: linear-gradient(rgba(255,255,255,.25),
-  rgba(255,255,255,0.25)), url("/public/landing/ingreso-carreras-ucasal/cards/estudiar-analista-comercio-exterior.jpg");
+  rgba(255,255,255,0.25)), url("/landing/ingreso-carreras-ucasal/cards/estudiar-analista-comercio-exterior.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -100,24 +99,23 @@ import Container from "./Container.astro";
 }
 .img-3{
   background: linear-gradient(rgba(255,255,255,.25),
-  rgba(255,255,255,0.25)), url("/public/landing/ingreso-carreras-ucasal/cards/estudiar-lic-administracion-agropecuaria-distancia.jpg");
+  rgba(255,255,255,0.25)), url("/landing/ingreso-carreras-ucasal/cards/estudiar-lic-administracion-agropecuaria-distancia.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
   background-size: cover;
 }
-/* Inicialmente el título está fuera de la vista (a la izquierda) */
+
 .faq-title {
   font-size: larger;
   font-weight: 600;
-  transform: translateX(0%); /* Comienza fuera del contenedor */
-  transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave al moverse */
+  transform: translateX(0%); 
+  transition: transform 0.5s ease, opacity 0.5s ease; 
 }
 
-/* Cuando la tarjeta está activa, el título se mueve a su posición original */
 .faq.active .faq-title {
-  transform: translateX(47%); /* Se traslada a su posición original */
-  opacity: 1; /* Se hace visible */
+  transform: translateX(47%); 
+  opacity: 1; 
 }
 
 .faq-text {
@@ -183,18 +181,18 @@ import Container from "./Container.astro";
 }
 @media (max-width: 768px){
   .faq.active .faq-title {
-    transform: translateX(37%); /* Se traslada a su posición original */
-    opacity: 1; /* Se hace visible */
+    transform: translateX(37%);
+    opacity: 1;
   }
 }
 @media (min-width: 768px) {
   .faq.active {
     grid-column: span 3;
   }
-  /* Cuando la tarjeta está activa, el título se mueve a su posición original */
+
   .faq.active .faq-title {
-    transform: translateX(45%); /* Se traslada a su posición original */
-    opacity: 1; /* Se hace visible */
+    transform: translateX(45%);
+    opacity: 1; 
   }
 }
 

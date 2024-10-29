@@ -6,6 +6,10 @@ import HeroSection from "../components/HeroSection.astro";
 import Carreras from "../components/Carreras.jsx";
 import Container from "../components/Container.astro";
 import Aranceles from "../components/Aranceles.astro";
+/* import Home from "../components/Home.astro"; */
+import Potencia from "../components/Potencia.astro";
+import Normas from "../components/Normas.astro";
+import CarruselInfinito from "../components/CarruselInfinito.astro";
 ---
 
 <Layout title="Inscripciones Abiertas - UCASAL">
@@ -14,7 +18,27 @@ import Aranceles from "../components/Aranceles.astro";
   <Container>
     <Carreras client:only="react" />
   </Container>
+  <div class="flex justify-center items-center">
+    <a
+      href="https://ucasal.edu.ar/inscripciones"
+      target="_blank"
+      aria-label="Banner de Inscripcion"
+    >
+      <div class="max-w-full overflow-hidden">
+        <video width="100%" id="banner" autoplay loop muted>
+          <source
+            src="https://www.ucasal.edu.ar/landing/public/banner.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </a>
+  </div>
+  <Potencia />
   <Aranceles />
+  <Normas />
+  <CarruselInfinito />
+  <!-- <Home /> -->
   <Footer />
 </Layout>
 
@@ -23,28 +47,32 @@ import Aranceles from "../components/Aranceles.astro";
     font-family: "Museo Sans";
     font-style: normal;
     font-weight: 300;
-    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_300.otf") format("opentype");
+    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_300.otf")
+      format("opentype");
   }
 
   @font-face {
     font-family: "Museo Sans";
     font-style: normal;
     font-weight: 500;
-    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_500.otf") format("opentype");
+    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_500.otf")
+      format("opentype");
   }
 
   @font-face {
     font-family: "Museo Sans";
     font-style: normal;
     font-weight: 700;
-    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_700.otf") format("opentype");
+    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_700.otf")
+      format("opentype");
   }
 
   @font-face {
     font-family: "Museo Sans";
     font-style: normal;
     font-weight: 900;
-    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_900.otf") format("opentype");
+    src: url("/landing/ingreso-carreras-ucasal/fonts/MuseoSans_900.otf")
+      format("opentype");
   }
   .bigTitle {
     display: inline-block;
@@ -54,11 +82,13 @@ import Aranceles from "../components/Aranceles.astro";
     font-family: "Museo Sans";
   }
   .neumorphism-component {
-  background-color: #f0f0f0; /* Fondo más claro */
-  border-radius: 0 0 15px 15px; /* Bordes redondeados solo en la parte inferior */
-  box-shadow: 
-    inset 10px 10px 20px #d1d1d1,  /* Sombra interna oscura (ajustada para el nuevo color de fondo) */
-    inset -10px -10px 20px #ffffff, /* Sombra interna clara */
-    10px 10px 20px rgba(0, 0, 0, 0.2), /* Sombra externa oscura */
-    -10px -10px 20px rgba(255, 255, 255, 0.7); /* Sombra externa clara */
-}
+    background-color: #f0f0f0; /* Fondo más claro */
+    border-radius: 0 0 15px 15px; /* Bordes redondeados solo en la parte inferior */
+    box-shadow:
+      inset 10px 10px 20px #d1d1d1,
+      /* Sombra interna oscura (ajustada para el nuevo color de fondo) */ inset -10px -10px
+        20px #ffffff,
+      /* Sombra interna clara */ 10px 10px 20px rgba(0, 0, 0, 0.2),
+      /* Sombra externa oscura */ -10px -10px 20px rgba(255, 255, 255, 0.7); /* Sombra externa clara */
+  }
+</style>

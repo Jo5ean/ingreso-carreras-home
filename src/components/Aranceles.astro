@@ -1,7 +1,11 @@
-<div class="relative bg-cover bg-center bg-fixed"
+---
+import Container from "./Container.astro"
+---
+<div class="relative bg-cover bg-center bg-fixed my-10"
     style="background-image: url('https://www.ucasal.edu.ar/landing/ingreso-carreras-ucasal/close-up-person-doing-online-shopping.webp');">
     <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="relative z-10 2xl:ml-64 xl:mx-52 md:mx-20 mx-5">
+    <Container>
+    <div class="relative z-10">
       <h2 class="bigTitle mt-5 text-white shadow-black">
         <span>Financia tus aranceles con:</span>
       </h2>
@@ -23,3 +27,5 @@
         </div>
       </div>
     </div>
+  </Container>
+</div>
