@@ -3,7 +3,7 @@ const Card = ({ codcar, codare, nombre, modo, duracion, nom }) => {
     nombre && nombre.split(" ").length > 4 ? "text-xs" : "text-md";
 
   return (
-    <a href={`../${codcar}`}>
+    <a href={`/landing/ingreso-carreras-home/${codcar}`}>
       <div className="flex justify-center mx-auto" style={{ transform: 'scale(0.8)' }}>
         <div className="max-w-lg w-[220px] h-[280px] lg:w-[250px] lg:h-[360px] rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
           {/* Parte 1: Imagen */}

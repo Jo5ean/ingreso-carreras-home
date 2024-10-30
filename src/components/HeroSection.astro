@@ -5,23 +5,15 @@ import Profesores from "../components/icons/Profesores.astro";
 import Online from "../components/icons/Online.astro";
 import Homeoffice from "../components/icons/Homeoffice.astro";
 ---
-
 <main class="snap-y snap-mandatory relative h-screen">
-  <section
-    class="h-1/2 w-full text-center relative overflow-hidden z-0 flex flex-col justify-end"
-  >
+  <!-- Sección de la imagen de encabezado -->
+  <section class="h-3/5 w-full text-center relative overflow-hidden z-0 flex flex-col justify-end">
     <div class="absolute top-0 left-0 w-full h-full z-10 overlay"></div>
 
-    <d
-    
-    iv class="relative z-20 w-full" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));">
+    <div class="relative z-20 w-full" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));">
       <Container>
         <h1 class="block text-white py-2 text-left transform-gpu"
-            style="
-            text-shadow: 0 0 60px #0000;
-            font-family: 'Bebas Neue', sans-serif;
-            padding: 5px;
-          ">
+            style="text-shadow: 0 0 60px #0000; font-family: 'Bebas Neue', sans-serif; padding: 5px;">
             <span class="text-2xl font-thin md:text-3xl">INGRESO 2025</span>
             <br />
             <span class="text-6xl font-thin md:text-[5.3rem] md:leading-[4.9rem] tracking-wide">
@@ -29,30 +21,21 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
             </span>
         </h1>
       </Container>
-    </d>      
+    </div>      
 
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
       <picture class="w-full h-full">
-        <source
-          media="(max-width: 767px)"
-          srcset="/landing/ingreso-carreras-ucasal/campus-vertical.webp"
-        />
-        <source
-          media="(min-width: 768px)"
-          srcset="/landing/ingreso-carreras-ucasal/young-man-listening-music-study-session.jpg"
-        />
-        <img
-          src="/landing/ingreso-carreras-ucasal/young-man-listening-music-study-session.jpg"
-          class="w-full h-full object-cover"
-          alt="Inscripciones abiertas"
-        />
+        <source media="(max-width: 767px)" srcset="/landing/ingreso-carreras-ucasal/campus-vertical.webp" />
+        <source media="(min-width: 768px)" srcset="/landing/ingreso-carreras-ucasal/young-man-listening-music-study-session.jpg" />
+        <img src="/landing/ingreso-carreras-ucasal/young-man-listening-music-study-session.jpg" class="w-full h-full object-cover" alt="Inscripciones abiertas" />
       </picture>
     </div>
   </section>
 
-  <section class="h-1/2 w-full absolute top-1/2 transform -translate-y-1/2 flex items-center justify-end z-10">
+  <!-- Formulario -->
+  <section class="w-full md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:pt-24 flex items-center justify-end z-10 md:bottom-auto">
     <Container>
-      <div class="relative z-30">
+      <div class="relative z-30 mt-4 md:mt-0"> <!-- Espacio solo en móviles -->
         <div class="shadow-2xl w-full">
           <Formu />
         </div>
@@ -60,36 +43,24 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
     </Container>
   </section>
   
+  <!-- Información debajo del formulario -->
   <section class="relative z-10">
     <Container>
       <div class="grid md:grid-cols-2 md:gap-4">
         <div class="text-gray-600 text-lg font-medium">
-          <h2 class="text-3xl font-semibold my-3">
-            ¡Estudia Online, Viví Offline!
-          </h2>
-          <h3 class="text-xl">
-            Esta modalidad 100% online está pensada para que puedas iniciar tu
-            formación profesional sin dejar de lado tu vida personal. Sin importar
-            dónde te encuentres, puedes rendir tus exámenes de manera virtual y
-            acceder a todos los recursos virtuales que ofrece nuestra Universidad.
-          </h3>
+          <h2 class="text-3xl font-semibold my-3">¡Estudia Online, Viví Offline!</h2>
+          <h3 class="text-xl">Esta modalidad 100% online está pensada para que puedas iniciar tu formación profesional sin dejar de lado tu vida personal. Sin importar dónde te encuentres, puedes rendir tus exámenes de manera virtual y acceder a todos los recursos virtuales que ofrece nuestra Universidad.</h3>
           <div class="cards flex justify-between">
             <div class="card bg-[#ee1818] p-2">
-              <div class="flex justify-center">
-                <Profesores class="object-cover rounded-t-lg"></Profesores>
-              </div>
+              <div class="flex justify-center"><Profesores class="object-cover rounded-t-lg"></Profesores></div>
               <p class="text-md font-bold">Flexibilidad</p>
             </div>
             <div class="card bg-[#ee1818] p-2">
-              <div class="flex justify-center">
-                <Homeoffice class="object-cover rounded-t-lg"></Homeoffice>
-              </div>
+              <div class="flex justify-center"><Homeoffice class="object-cover rounded-t-lg"></Homeoffice></div>
               <p class="text-md font-bold">Comodidad</p>
             </div>
             <div class="card bg-[#ee1818] p-2">
-              <div class="flex justify-center">
-                <Online class="object-cover rounded-t-lg"></Online>
-              </div>
+              <div class="flex justify-center"><Online class="object-cover rounded-t-lg"></Online></div>
               <p class="text-md font-bold">Innovación</p>
             </div>
           </div>
@@ -99,23 +70,21 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
   </section>  
 </main>
 
-
 <style is:inline>
 .cards {
-  gap: 15px;
+  gap: 6px;
   margin-top: 20px;
 }
 
 .cards .card {
-  text-align: center;-
-  width: 200px; /* Ajuste de tamaño de las tarjetas */
+  text-align: center;
+  width: 100%; /* Ajuste de tamaño de las tarjetas */
   border-radius: 10px;
   color: white;
   cursor: pointer;
   transition: 400ms;
   overflow: hidden;
 }
-
 
 .cards .card p.tip {
   font-size: 1.2em;
