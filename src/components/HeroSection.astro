@@ -62,13 +62,16 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
       </div>
     </Container>
   </section>
-
   <section class="relative z-10 min-h-[40vh] md:h-full" id="a solucionar">
     <Container>
       <div class="grid md:grid-cols-2 md:gap-4">
         <div class="text-gray-600 text-lg font-medium">
-          <h2 class="text-3xl font-semibold my-3">¡Estudia Online, Viví Offline!</h2>
-          <h3 class="text-xl">Esta modalidad 100% online está pensada para que puedas iniciar tu formación profesional sin dejar de lado tu vida personal. Sin importar dónde te encuentres, puedes rendir tus exámenes de manera virtual y acceder a todos los recursos virtuales que ofrece nuestra Universidad.</h3>
+          <h2 class="text-3xl font-semibold my-3">
+            ¡Estudia <span class="shadow-green">Online</span>, Viví <span class="shadow-red">Offline</span>!
+          </h2>
+          <h3 class="text-xl">
+            Esta modalidad 100% online está pensada para que puedas iniciar tu formación profesional sin dejar de lado tu vida personal. Sin importar dónde te encuentres, puedes rendir tus exámenes de manera virtual y acceder a todos los recursos virtuales que ofrece nuestra Universidad.
+          </h3>
           <div class="cards flex justify-between">
             <div class="card bg-[#ee1818] p-2">
               <div class="flex justify-center"><Profesores class="object-cover rounded-t-lg"></Profesores></div>
@@ -87,14 +90,35 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
       </div>
     </Container>
   </section>
+  
 </main>
 
 <style is:inline>
+    .shadow-green {
+      color: #00a000;
+      position: relative;
+      animation: shadow-green-flicker 1.5s infinite alternate;
+    }
+  
+    .shadow-red {
+      color: #ee1818;
+      position: relative;
+      animation: shadow-red-flicker 1.5s infinite alternate;
+    }
+  
+    @keyframes shadow-green-flicker {
+      from { text-shadow: 0px 0px 1px #00a000; }
+      to { text-shadow: 0px 0px 5px #06a806; }
+    }
+  
+    @keyframes shadow-red-flicker {
+      from { text-shadow: 0px 0px 1px #ee1818; }
+      to { text-shadow: 0px 0px 5px #ff0000; }
+    }
   .cards {
     gap: 6px;
     margin-top: 20px;
   }
-
   .cards .card {
     text-align: center;
     width: 100%;

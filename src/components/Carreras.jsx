@@ -17,7 +17,7 @@ export default function Carreras() {
   return (
     <div>
       <Section
-        id="Carreras"
+        id="carreras"
         title="Conocé nuestras"
         highlight="CARRERAS"
         carreras={filtrarCarreras(datita)}
