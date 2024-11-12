@@ -1,6 +1,6 @@
-const Card = ({ codcar, codare, nombre, modo, duracion, nom }) => {
+const Card = ({ codcar, codare, nombre, modo, duracion }) => {
   const nombreClasses =
-    nombre && nombre.split(" ").length > 4 ? "text-xs" : "text-md";
+    nombre && nombre.split(" ").length > 5 ? "text-xs" : "text-md";
 
   return (
     <a href={`/landing/ingreso-carreras-home/${codcar}`}>
@@ -23,7 +23,7 @@ const Card = ({ codcar, codare, nombre, modo, duracion, nom }) => {
             </div>
           </div>
           {/* Parte 4: Datos */}
-          <div className="p-2 bg-[#ee1818] w-full h-full">
+          <div className="p-4 bg-[#ee1818] w-full h-full">
             <div className="grid grid-cols-2 gap-2 text-center">
               <div className="text-white flex flex-col col-span-1">
                 <span className="rounded-full px-1 text-xs font-light">
