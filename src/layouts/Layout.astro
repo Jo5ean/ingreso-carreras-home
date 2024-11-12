@@ -54,8 +54,8 @@ import { ViewTransitions } from "astro:transitions";
           throw new Error(`Network response was not ok: ${resp.statusText}`);
         }
         const data = await resp.json();
-      /*   console.log(data); */
-        window.localStorage.setItem("CarrerasModHome", JSON.stringify(data));
+        const carrerasGrado = data.filter(item => item.tipoCarrera === "Grado");
+        window.localStorage.setItem("CarrerasModHome", JSON.stringify(carrerasGrado));
       } catch (error) {
         console.error('Fetch error:', error);
       }
