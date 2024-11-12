@@ -47,19 +47,21 @@ import { ViewTransitions } from "astro:transitions";
     <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
     ></script>
     <script is:inline>
-        (async () => {
-      try {
-        const resp = await fetch(`https://sistemasweb.ucasal.edu.ar/v1/oferta-academica?codigoLugar=500`);
-        if (!resp.ok) {
-          throw new Error(`Network response was not ok: ${resp.statusText}`);
+      (async () => {
+        try {
+          const resp = await fetch(
+            `https://sistemasweb.ucasal.edu.ar/v1/oferta-academica?codigoLugar=500`
+          );
+          if (!resp.ok) {
+            throw new Error(`Network response was not ok: ${resp.statusText}`);
+          }
+          const data = await resp.json();
+          /*   console.log(data); */
+          window.localStorage.setItem("CarrerasModHome", JSON.stringify(data));
+        } catch (error) {
+          console.error("Fetch error:", error);
         }
-        const data = await resp.json();
-      /*   console.log(data); */
-        window.localStorage.setItem("CarrerasModHome", JSON.stringify(data));
-      } catch (error) {
-        console.error('Fetch error:', error);
-      }
-    })();
+      })();
 
       fetch("https://www.ucasal.edu.ar/landing/assets/datosCarreras.json")
         .then((response) => response.json())

@@ -21,7 +21,7 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
           class="block text-white py-2 text-left transform-gpu relative -top-12"
           style="text-shadow: 0 0 60px #0000; font-family: 'Bebas Neue', sans-serif; padding: 5px;"
         >
-          <span class="text-2xl font-thin md:text-3xl">INGRESO 2025</span>
+          <span class="text-2xl bottom-5 relative font-thin md:text-3xl bg-red-600/80 rounded-lg px-2 text-white shadow-[0_0_0_8px] shadow-red-600/80">MODO HOME</span>
           <br />
           <span
             class="text-6xl font-thin md:text-[5.3rem] md:leading-[4.9rem] tracking-wide"
@@ -36,14 +36,14 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
       <picture class="w-full h-full">
         <source
           media="(max-width: 767px)"
-          srcset="/landing/ingreso-carreras-ucasal/campus-vertical.webp"
+          srcset="landing/ingreso-carreras-ucasal/Home_mobile.webp"
         />
         <source
           media="(min-width: 768px)"
-          srcset="/landing/ingreso-carreras-ucasal/young-man-listening-music-study-session.jpg"
+          srcset="landing/ingreso-carreras-ucasal/Home_desk.webp"
         />
         <img
-          src="/landing/ingreso-carreras-ucasal/young-man-listening-music-study-session.jpg"
+          src="landing/ingreso-carreras-ucasal/Home_desk.webp"
           class="w-full h-full object-cover"
           alt="Inscripciones abiertas"
         />
@@ -56,21 +56,21 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
   >
     <Container>
       <div class="relative z-30 mt-4 md:mt-0">
-        <div class="shadow-2xl w-full">
+        <div class="shadow-2xl w-full" id="#formu">
           <Formu />
         </div>
       </div>
     </Container>
   </section>
-  <section class="relative min-h-[40vh] md:h-full" id="a solucionar">
+  <section class="relative min-h-[50vh] md:h-full top-6" id="a solucionar">
     <Container>
       <div class="grid md:grid-cols-2 md:gap-4">
         <div class="text-gray-600 text-lg font-medium">
           <h2 class="text-3xl font-semibold my-3">
-            ¡Estudia <span class="shadow-green">Online</span>, Viví <span class="shadow-red">Offline</span>!
+            ¡Estudiá <span class="shadow-green">Online</span>, Viví <span>Offline</span>!
           </h2>
           <h3 class="text-xl">
-            Esta modalidad 100% online está pensada para que puedas iniciar tu formación profesional sin dejar de lado tu vida personal. Sin importar dónde te encuentres, puedes rendir tus exámenes de manera virtual y acceder a todos los recursos virtuales que ofrece nuestra Universidad.
+            Esta modalidad 100% online está pensada para que puedas iniciar tu formación profesional sin dejar de lado tu vida personal. Sin importar dónde te encontres, podes rendir tus exámenes de manera virtual y acceder a todos los recursos virtuales que ofrece nuestra Universidad.
           </h3>
           <div class="cards flex justify-between">
             <div class="card bg-[#ee1818] p-2">
@@ -100,21 +100,11 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
       animation: shadow-green-flicker 1.5s infinite alternate;
     }
   
-    .shadow-red {
-      color: #ee1818;
-      position: relative;
-      animation: shadow-red-flicker 1.5s infinite alternate;
-    }
-  
     @keyframes shadow-green-flicker {
       from { text-shadow: 0px 0px 1px #00a000; }
       to { text-shadow: 0px 0px 5px #06a806; }
     }
-  
-    @keyframes shadow-red-flicker {
-      from { text-shadow: 0px 0px 1px #ee1818; }
-      to { text-shadow: 0px 0px 5px #ff0000; }
-    }
+    
   .cards {
     gap: 6px;
     margin-top: 20px;
@@ -153,4 +143,37 @@ import Homeoffice from "../components/icons/Homeoffice.astro";
     filter: blur(10px);
     transform: scale(0.9);
   }
+  
+  .zoom-effect {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
 </style>
+
+<script is:inline>
+  function scrollToForm() {
+    var componente = document.getElementById("pedidoinfo"); // Obtener el componente
+
+    // Calcular la posición del componente
+    var componentePosicion = componente.offsetTop;
+
+    // Hacer scroll hasta la posición del componente
+    window.scrollTo({
+      top: componentePosicion + 65, 
+      behavior: "smooth",
+    });
+
+    // Esperar un tiempo antes de aplicar el zoom
+    setTimeout(function () {
+      // Añadir la clase de efecto de zoom al componente
+      componente.classList.add("zoom-effect");
+
+      // Esperar un tiempo antes de quitar el zoom
+      setTimeout(function () {
+        // Quitar la clase de efecto de zoom
+        componente.classList.remove("zoom-effect");
+      }, 1000); // Ajusta el tiempo de espera según tus necesidades
+    }, 500); // Ajusta el tiempo de espera según tus necesidades
+  }
+</script>
