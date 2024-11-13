@@ -1,6 +1,6 @@
 const Card = ({ codcar, codare, nombre, modo, duracion }) => {
   const nombreClasses =
-    nombre && nombre.split(" ").length > 5 ? "text-xs" : "text-md";
+    nombre && nombre.split(" ").length > 5 ? "text-[0.8rem]" : "text-base";
 
   return (
     <a href={`/landing/ingreso-carreras-home/${codcar}`}>
@@ -10,12 +10,12 @@ const Card = ({ codcar, codare, nombre, modo, duracion }) => {
             <img src={`/landing/public/cards/${codcar}.webp`} alt={`${nombre}`} className="absolute w-full h-full object-cover object-center" />
           </div>
           <img
-            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-[75%] lg:-translate-y-[5%] w-16 h-12 lg:w-20 lg:h-14"
+            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-[75%] lg:-translate-y-[5%] w-16 h-12 lg:w-20 lg:h-16"
             src={`/landing/ingreso-carreras-ucasal/iconoCarrera/${codare ? (codare === "30" ? "13" : codare) : "default"}.svg`}
             alt="icono carta"
           />
           <div className="px-2 pt-8 bg-white flex items-center justify-center h-20">
-            <div className={`font-bold text-center mb-5 ${nombreClasses}`}>
+            <div className={`font-semibold text-center mb-5 ${nombreClasses}`}>
               {nombre || ""}
             </div>
           </div>
@@ -25,7 +25,7 @@ const Card = ({ codcar, codare, nombre, modo, duracion }) => {
                 <span className="rounded-full px-1 text-xs font-light">
                   Modalidad
                 </span>
-                <span className="rounded-full px-1 text-xs font-bold">
+                <span className="rounded-full px-1 text-sm font-bold">
                   {modo?.includes("7")
                     ? "Digital"
                     : modo?.includes("1")
