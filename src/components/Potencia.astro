@@ -1,128 +1,126 @@
-<div class=" my-5 2xl:ml-64 xl:mx-52 md:mx-20 mx-5">
-    <h2 class="bigTitle" style="font-size: 30px; font-weight: 600; color: #B11111;"><span
-        style="color: rgb(97, 96, 96); font-weight: 700;">&#191;Qu&eacute; es&nbsp; modo</span><strong>HOME</strong><span
-        style="color: rgb(97, 96, 96)">?</span></h2>
-    <p class="texto-seccion-f">
-      Una forma de aprender y ense&ntilde;ar. Te brindamos una educaci&oacute;n:
-    </p>
-  </div>
-  <!-- que es ucasal x -->
-  <div class="grid-cols-12 gap-8 hidden lg:grid mb-10 2xl:ml-64 xl:mx-52 md:mx-20 mx-5">
-    <div class="col-span-2 col-start-2"><img src="img/img-test/icons/int.svg" alt="Educaci�n Integral">
-      <p class="text-center text-gray-600 text-xl font-semibold">INTEGRAL</p>
-    </div>
-    <div class="col-span-2"><img src="img/img-test/icons/flex.svg" alt="Experiencia flexible">
-      <p class="text-center text-gray-600 text-xl font-semibold">FLEXIBLE</p>
-    </div>
-    <div class="col-span-2"><img src="img/img-test/icons/acc.svg" alt="Educaci�n Accesible">
-      <p class="text-center text-gray-600 text-xl font-semibold">ACCESIBLE</p>
-    </div>
-    <div class="col-span-2"><img src="img/img-test/icons/pedag.svg" alt="Pedagog�a">
-      <p class="text-center text-gray-600 text-xl font-semibold">PEDAG&Oacute;GICA</p>
-    </div>
-    <div class="col-span-2"><img src="img/img-test/icons/tec.svg" alt="Tecnolog�a">
-      <p class="text-center text-gray-600 text-xl font-semibold">TECNOL&Oacute;GICA</p>
-    </div>
-  </div>
-  <!-- que es ucasal x (versi�n m�vil) -->
-  <div id="indicators-carousel" class="relative w-full block lg:hidden" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-      <!-- Item 1 -->
-      <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-30 -translate-x-full z-10"
-        data-carousel-item="active">
-        <div class="flex flex-col items-center justify-center absolute w-full h-full">
-          <img src="img/img-test/icons/int.svg" class="block w-1/3 lg:w-1/5" alt="integral">
-          <p class="texto-clases text-center font-bold">INTEGRAL</p>
+---
+import Container from "./Container.astro";
+---
+<Container>
+    <div id="beneficios" class="my-5">
+        <h2 class="bigTitle" style="font-size: 30px; font-weight: 600; color: #B11111;"><span
+            style="color: rgb(97, 96, 96); font-weight: 700;">&#191;Qu&eacute; es&nbsp;modo</span><strong> HOME</strong><span
+            style="color: rgb(97, 96, 96)">?</span></h2>
+        <p class="texto-seccion-f">
+          Una forma de aprender y ense&ntilde;ar. Te brindamos una educaci&oacute;n:
+        </p>
+      </div>
+      <div class="grid-cols-12 gap-8 hidden lg:grid mb-10 ">
+        <div class="col-span-2 col-start-2"><img src="img/img-test/icons/int.svg" alt="Educaci�n Integral">
+          <p class="text-center text-gray-600 text-xl font-semibold">INTEGRAL</p>
+        </div>
+        <div class="col-span-2"><img src="img/img-test/icons/flex.svg" alt="Experiencia flexible">
+          <p class="text-center text-gray-600 text-xl font-semibold">FLEXIBLE</p>
+        </div>
+        <div class="col-span-2"><img src="img/img-test/icons/acc.svg" alt="Educaci�n Accesible">
+          <p class="text-center text-gray-600 text-xl font-semibold">ACCESIBLE</p>
+        </div>
+        <div class="col-span-2"><img src="img/img-test/icons/pedag.svg" alt="Pedagog�a">
+          <p class="text-center text-gray-600 text-xl font-semibold">PEDAG&Oacute;GICA</p>
+        </div>
+        <div class="col-span-2"><img src="img/img-test/icons/tec.svg" alt="Tecnolog�a">
+          <p class="text-center text-gray-600 text-xl font-semibold">TECNOL&Oacute;GICA</p>
         </div>
       </div>
-      <!-- Item 2 -->
-      <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-20 translate-x-0 z-30"
-        data-carousel-item="">
-        <div class="flex flex-col items-center justify-center absolute w-full h-full">
-          <img src="img/img-test/icons/flex.svg" class="block w-1/3 lg:w-1/5" alt="FLEXIBLE">
-          <p class="texto-clases text-center font-bold">FLEXIBLE</p>
+      <!-- versi�n m�vil -->
+      <div id="indicators-carousel" class="relative w-full block lg:hidden" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <!-- Item 1 -->
+          <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-30 -translate-x-full"
+            data-carousel-item="active">
+            <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="img/img-test/icons/int.svg" class="block w-1/3 lg:w-1/5" alt="integral">
+              <p class="texto-clases text-center font-bold">INTEGRAL</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform translate-x-0 z-30"
+            data-carousel-item="">
+            <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="img/img-test/icons/flex.svg" class="block w-1/3 lg:w-1/5" alt="FLEXIBLE">
+              <p class="texto-clases text-center font-bold">FLEXIBLE</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform translate-x-full z-20"
+            data-carousel-item="">
+            <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="img/img-test/icons/acc.svg" class="block w-1/3 lg:w-1/5" alt="ACCESIBLE">
+              <p class="texto-clases text-center font-bold">ACCESIBLE</p>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div
+            class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-30 -translate-x-full hidden"
+            data-carousel-item="">
+            <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="img/img-test/icons/pedag.svg" class="block w-1/3 lg:w-1/5" alt="PEDAG?GICA">
+              <p class="texto-clases text-center font-bold">PEDAG&Oacute;GICA</p>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div
+            class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-30 -translate-x-full hidden"
+            data-carousel-item="">
+            <div class="flex flex-col items-center justify-center absolute w-full h-full">
+              <img src="img/img-test/icons/tec.svg" class="block w-1/3 lg:w-1/3" alt="TECNOL?GICA">
+              <p class="texto-clases text-center font-bold">TECNOL&Oacute;GICA</p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Slider controls -->
+        <button type="button"
+          class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev="">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 bg-gray-800/30 group-hover:bg-gray-600 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4">
+              </path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button type="button"
+          class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next="">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 bg-gray-800/30 group-hover:bg-gray-600 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4">
+              </path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5 ">
+        <div>
+          <p class="mt-5">
+            Garantizando un aprendizaje inmersivo, colaborativo, activo, personalizado e h&iacute;brido.
+          </p>
+          <p class="mt-5">
+            Con Modo Home podrás cursar materias a través de nuestra plataforma<br>
+            <span class="text-red-600 font-semibold"> E-Learning</span> con videoclases, materiales multimedia, foros de consulta y otros recursos didácticos. Además de interactuar con profesores y compañeros. 
+          </p>
+        </div>
+        <div>
+          <p class="mt-5">
+            Estar&aacute;s en contacto con tus compa&ntilde;eros en espacios virtuales a trav&eacute;s de redes sociales y en
+            foros.
+          </p>
+          <p class="mt-5"> 
+            Los exámenes finales se rinden de manera 100% online con supervisión remota desde la comodidad de tu casa. 
+          </p>
         </div>
       </div>
-      <!-- Item 3 -->
-      <div class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-10 translate-x-full z-20"
-        data-carousel-item="">
-        <div class="flex flex-col items-center justify-center absolute w-full h-full">
-          <img src="img/img-test/icons/acc.svg" class="block w-1/3 lg:w-1/5" alt="ACCESIBLE">
-          <p class="texto-clases text-center font-bold">ACCESIBLE</p>
-        </div>
-      </div>
-      <!-- Item 4 -->
-      <div
-        class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-30 -translate-x-full z-10 hidden"
-        data-carousel-item="">
-        <div class="flex flex-col items-center justify-center absolute w-full h-full">
-          <img src="img/img-test/icons/pedag.svg" class="block w-1/3 lg:w-1/5" alt="PEDAG?GICA">
-          <p class="texto-clases text-center font-bold">PEDAG�GICA</p>
-        </div>
-      </div>
-      <!-- Item 5 -->
-      <div
-        class="duration-700 ease-in-out absolute inset-0 transition-transform transform z-30 -translate-x-full z-10 hidden"
-        data-carousel-item="">
-        <div class="flex flex-col items-center justify-center absolute w-full h-full">
-          <img src="img/img-test/icons/tec.svg" class="block w-1/3 lg:w-1/3" alt="TECNOL?GICA">
-          <p class="texto-clases text-center font-bold">TECNOL�GICA</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slider controls -->
-    <button type="button"
-      class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-prev="">
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 bg-gray-800/30 group-hover:bg-gray-600 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-800/70 group-focus:outline-none">
-        <svg class="w-4 h-4 text-white text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4">
-          </path>
-        </svg>
-        <span class="sr-only">Previous</span>
-      </span>
-    </button>
-    <button type="button"
-      class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-next="">
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-400 bg-gray-800/30 group-hover:bg-gray-600 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white group-focus:ring-gray-800/70 group-focus:outline-none">
-        <svg class="w-4 h-4 text-white text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4">
-          </path>
-        </svg>
-        <span class="sr-only">Next</span>
-      </span>
-    </button>
-  </div>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 my-5 2xl:ml-64 xl:mx-52 md:mx-20 mx-5">
-    <div>
-      <p class="mt-5">
-        Garantizando un aprendizaje inmersivo, colaborativo, activo, personalizado e h&iacute;brido.
-      </p>
-      <p class="mt-5">
-        Nuestras clases se dictan a trav&eacute;s de una <span class="text-red-600 font-semibold">plataforma
-          E-Learning</span> con videoclases, materiales multimedia, foros de consulta y otros recursos
-        did&aacute;cticos.
-      </p>
-    </div>
-    <div>
-      <p>
-        Estar&aacute;s en contacto con tus compa&ntilde;eros en espacios virtuales a trav&eacute;s de redes sociales,
-        foros y en tu sede donde adem&aacute;s contar&aacute;s con la asistencia de un coordinador
-      </p>
-      <p class="mt-5">
-        Los ex&aacute;menes finales se rinden online en distintos horarios durante toda la jornada, desde la comodidad
-        de tu casa.
-      </p>
-      <p class="">
-        Podr&aacute;s rendir tus ex&aacute;menes finales de manera online con supervisi&oacute;n remota o bien
-        asistiendo a tu sede m&aacute;s cercana.
-      </p>
-    </div>
-  </div>
+</Container>

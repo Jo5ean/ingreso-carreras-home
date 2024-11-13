@@ -1,6 +1,6 @@
-const Card = ({ codcar, codare, nombre, modo, duracion, nom }) => {
+const Card = ({ codcar, codare, nombre, modo, duracion }) => {
   const nombreClasses =
-    nombre && nombre.split(" ").length > 4 ? "text-xs" : "text-md";
+    nombre && nombre.split(" ").length > 5 ? "text-xs" : "text-md";
 
   return (
     <a href={`/landing/ingreso-carreras-home/${codcar}`}>
