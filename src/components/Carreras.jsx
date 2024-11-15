@@ -1,5 +1,5 @@
 import Card from "./Card.jsx";
-import { datita } from "../scripts/datita.js";
+import { datita } from "../scripts/datita-home.js";
 
 export default function Carreras() {
   // Filtramos las carreras
