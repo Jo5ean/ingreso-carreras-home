@@ -1,11 +1,11 @@
 const Card = ({ codcar, codare, nombre, modo, duracion }) => {
-  const nombreClasses =
-    nombre && nombre.split(" ").length > 5 ? "text-[0.8rem]" : "text-base";
+  /* const nombreClasses =
+    nombre && nombre.split(" ").length > 5 ? "text-[0.8rem]" : "text-base"; */
 
   return (
     <a href={`/landing/ingreso-carreras-home/${codcar}`}>
       <div className="flex justify-center mx-auto" style={{ transform: 'scale(0.8)' }}>
-        <div className="max-w-lg w-[220px] h-[280px] lg:w-[250px] lg:h-[360px] rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
+        <div className="max-w-lg w-[270px] h-full lg:w-[300px] rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
           {/* Parte 1: Imagen */}
           <div className="relative h-32 lg:h-52">
             <img src={`/landing/public/cards/${codcar}.webp`} alt={`${nombre}`} className="absolute w-full h-full object-cover object-center" />
@@ -17,8 +17,8 @@ const Card = ({ codcar, codare, nombre, modo, duracion }) => {
             alt="icono carta"
           />
           {/* Parte 3: Título */}
-          <div className="px-2 pt-8 bg-white flex items-center justify-center h-20">
-            <div className={`font-semibold text-center mb-5 ${nombreClasses}`}>
+          <div className="px-2 pt-8 bg-white flex items-center justify-center h-32">
+            <div className="font-semibold text-center text-lg">
               {nombre || ""}
             </div>
           </div>
