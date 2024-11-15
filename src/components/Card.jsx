@@ -1,12 +1,13 @@
 const Card = ({ codcar, codare, nombre, modo, duracion }) => {
-  const nombreClasses =
-    nombre && nombre.split(" ").length > 5 ? "text-[0.8rem]" : "text-base";
+  /* const nombreClasses =
+    nombre && nombre.split(" ").length > 5 ? "text-[0.8rem]" : "text-base"; */
 
   return (
     <a href={`/landing/ingreso-carreras-home/${codcar}`}>
-      <div className="flex justify-center mx-auto" style={{ transform: 'scale(0.8)' }}>
-        <div className="max-w-lg w-[250px] h-[280px] lg:w-[250px] lg:h-[360px] rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
-          <div className="relative h-32 lg:h-52">
+      <div className="flex justify-center" style={{ transform: 'scale(0.8)' }}>
+        <div className="max-w-xl h-full w-[300px] rounded-2xl overflow-hidden shadow-lg relative transition-transform hover:scale-105 hover:shadow-xl border-2">
+          {/* Parte 1: Imagen */}
+          <div className="relative h-32 lg:h-48">
             <img src={`/landing/public/cards/${codcar}.webp`} alt={`${nombre}`} className="absolute w-full h-full object-cover object-center" />
           </div>
           <img
@@ -14,8 +15,9 @@ const Card = ({ codcar, codare, nombre, modo, duracion }) => {
             src={`/landing/ingreso-carreras-ucasal/iconoCarrera/${codare ? (codare === "30" ? "13" : codare) : "default"}.svg`}
             alt="icono carta"
           />
-          <div className="px-2 pt-8 bg-white flex items-center justify-center h-20">
-            <div className={`font-semibold text-center mb-5 ${nombreClasses}`}>
+          {/* Parte 3: Título */}
+          <div className="px-2 pt-8 bg-white flex items-center justify-center h-28">
+            <div className="font-semibold text-center text-sm">
               {nombre || ""}
             </div>
           </div>
