@@ -1,5 +1,7 @@
 # build output
 dist/
+build/
+public/
 
 # generated types
 .astro/
@@ -22,3 +24,15 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# cache
+.cache/
+.temp/
+
+# local development files
+*.local
+
+# IDE specific files
+.vscode/
+*.sublime-project
+*.sublime-workspace

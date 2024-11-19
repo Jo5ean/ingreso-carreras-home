@@ -358,17 +358,23 @@ const { codcar, nombre } = Astro.props;
         localidadSelect.appendChild(option);
       });
     }
+
     const carreraSelect = document.getElementById("cbx_carrera");
     carreraSelect.innerHTML =
       '<option value="" disabled selected>Seleccionar Carrera</option>';
     carreraSelect.removeAttribute("disabled");
-    /* console.log(window.localStorage.getItem("CarrerasModHome")); */
+
+    console.log(
+      "Local Storage: ",
+      window.localStorage.getItem("CarrerasModHome"),
+    );
     const carrerasData = JSON.parse(
       window.localStorage.getItem("CarrerasModHome"),
     );
-    /* console.log(carrerasData); */
-    if (carrerasData && carrerasData.data && carrerasData.data.length) {
-      carrerasData.data.forEach((carrera) => {
+    console.log("Dato extraído del LS: ", carrerasData);
+
+    if (carrerasData && carrerasData.length) {
+      carrerasData.forEach((carrera) => {
         const option = document.createElement("option");
         option.value = carrera.codigoCarrera;
         option.text = carrera.nombreCarrera;
