@@ -47,21 +47,65 @@ import { ViewTransitions } from "astro:transitions";
     <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
     ></script>
     <script>
-        (async () => {
-      try {
-        const resp = await fetch(`https://sistemasweb.ucasal.edu.ar/v1/oferta-academica?codigoLugar=500`);
-        if (!resp.ok) {
-          throw new Error(`Network response was not ok: ${resp.statusText}`);
+      (async () => {
+        try {
+          const resp = await fetch(
+            `https://sistemasweb.ucasal.edu.ar/v1/oferta-academica?codigoLugar=500`,
+          );
+          if (!resp.ok) {
+            throw new Error(`Network response was not ok: ${resp.statusText}`);
+          }
+          const data = await resp.json();
+          console.log("Data completa:", data);
+
+          // Lista de códigos de carrera permitidos
+          const allowedCodes = [
+            16, 14, 244, 138, 360, 355, 11, 336, 161, 383, 15, 10, 96, 363, 17,
+            58, 133, 30, 250, 185, 9, 214, 378, 113, 196, 361, 194, 186, 187,
+            368,
+          ];
+
+          // Verificar si algún código de allowedCodes no está en data
+          const dataCodes = data.data.map((item) => item.codigoCarrera);
+          const missingCodes = allowedCodes.filter(
+            (code) => !dataCodes.includes(code),
+          );
+          if (missingCodes.length > 0) {
+            console.log(
+              "Códigos de carrera faltantes en la respuesta:",
+              missingCodes,
+            );
+          } else {
+            console.log(
+              "Todos los códigos de carrera permitidos están presentes en la respuesta.",
+            );
+          }
+
+          // Filtrar solo las carreras que están en allowedCodes y evitar duplicados
+          const carrerasGrado = data.data.reduce((unique, item) => {
+            if (
+              allowedCodes.includes(item.codigoCarrera) &&
+              !unique.some(
+                (carrera) => carrera.codigoCarrera === item.codigoCarrera,
+              )
+            ) {
+              unique.push(item);
+            }
+            return unique;
+          }, []);
+
+          console.log(
+            "Carreras de grado filtradas y sin duplicados:",
+            carrerasGrado,
+          );
+          window.localStorage.setItem(
+            "CarrerasModHome",
+            JSON.stringify(carrerasGrado),
+          );
+        } catch (error) {
+          console.error("Fetch error:", error);
         }
-        const data = await resp.json();
-        console.log("Data completa:", data);
-        const carrerasGrado = data.data.filter(item => item.tipoCarrera === "Grado" && item.codigoCarrera !== 1432);
-        console.log("Carreras de grado:", carrerasGrado);
-        window.localStorage.setItem("CarrerasModHome", JSON.stringify(carrerasGrado));
-      } catch (error) {
-        console.error('Fetch error:', error);
-      }
-    })();
+      })();
 
       fetch("https://www.ucasal.edu.ar/landing/assets/datosCarreras.json")
         .then((response) => response.json())
