@@ -7,7 +7,6 @@ const { codcar, nombre } = Astro.props;
 ---
 
 <form
-  role="form"
   id="pedidoinfo"
   method="post"
   enctype="multipart/form-data"
@@ -16,13 +15,17 @@ const { codcar, nombre } = Astro.props;
   class="max-w-md mx-auto bg-gray-200 rounded-lg p-4 shadow-md"
 >
   <!-- Campo oculto para pasar el valor de codcar -->
-  <input type="hidden" id="hiddenCodcar" value={codcar} />
   <input type="hidden" name="cbx_sede" value="500" id="cbx_sede" />
-  <input type="hidden" value="103" name="id_origen" id="id_origen" />
+  <input type="hidden" name="modo" value="7" id="modo" />
+  <input type="hidden" value="702" name="id_origen" id="id_origen" />
   <!-- <input type="hidden" value=" " name="apellido" id="apellido" /> -->
   <input type="hidden" value="postulantes" name="tabla" />
-  <input type="hidden" id="addr" name="addr" />
-  <input type="hidden" id="agent" name="agent" />
+  <input name="addr" type="hidden" value="10.0.219.12" />
+  <input
+    name="agent"
+    type="hidden"
+    value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  />
   <input type="hidden" name="utm_source" id="utm_source" />
   <input type="hidden" name="utm_medium" id="utm_medium" />
   <input type="hidden" name="utm_term" id="utm_term" />
@@ -32,15 +35,11 @@ const { codcar, nombre } = Astro.props;
   <input type="hidden" name="campaignid" id="campaignid" />
   <input type="hidden" name="referer" id="referer" />
   <input name="gclid" type="hidden" id="gclid" />
-  <input
-    type="hidden"
-    name="tkp"
-    value="/landing/enviado-distancia-2021.php"
-  />
+  <input type="hidden" name="tkp" value="/landing/enviado-home.php" />
   <input
     type="hidden"
     name="fkp"
-    value="/landing/enviado-distancia-2021.php?id=404"
+    value="/landing/enviado-home.php?id=404"
   />
 
   <p class="text-base font-medium mb-4 mt-2 text-center text-gray-900">
@@ -241,20 +240,30 @@ const { codcar, nombre } = Astro.props;
   >
   </div>
   <div class="flex justify-center mt-2">
-    <button id="formButton" type="submit"
+    <button
+      id="formButton"
+      type="submit"
       class="boton-gris text-white bg-[#242F41] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 scale-105"
-      tabindex="11" onclick="check()" disabled>
+      tabindex="11"
+      onclick="check()"
+      disabled
+    >
       Enviar
     </button>
     <div id="spinnerContainer" class="hidden" role="status">
-      <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#B11111]"
-        viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        aria-hidden="true"
+        class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#B11111]"
+        viewBox="0 0 100 101"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-          fill="currentColor" />
+          fill="currentColor"></path>
         <path
           d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-          fill="currentFill" />
+          fill="currentFill"></path>
       </svg>
       <span class="sr-only">Loading...</span>
     </div>
@@ -296,39 +305,39 @@ const { codcar, nombre } = Astro.props;
   });
 
   const provinciasLocalidades = {
-  "MENDOZA": [
-    "MENDOZA CAPITAL",
-    "RIVADAVIA",
-    "MAIPU",
-    "LUJAN DE CUYO",
-    "POTRERILLOS",
-  ],
-  "SAN JUAN": [
-    "SAN JUAN",
-    "RAWSON",
-    "RIVADAVIA",
-    "CHIMBAS",
-    "CALINGASTA",
-    "SANTA LUCIA",
-    "CAUCETE",
-  ],
-  "ENTRE RIOS": [
-    "PARANA",
-    "CRESPO",
-    "VILLAGUAY",
-    "FEDERAL",
-    "SANTA ELENA",
-    "DIAMANTE",
-  ],
-  "CORDOBA": [
-    "CORDOBA CAPITAL",
-    "ALTA GRACIA",
-    "VILLA CARLOS PAZ",
-    "MINA CLAVERO",
-  ],
-  "TUCUMAN": ["MONTEROS", "CONCEPCION"],
-  "SANTIAGO DEL ESTERO": ["TERMAS DE RIO HONDO", "FRIAS"],
-};
+    MENDOZA: [
+      "MENDOZA CAPITAL",
+      "RIVADAVIA",
+      "MAIPU",
+      "LUJAN DE CUYO",
+      "POTRERILLOS",
+    ],
+    "SAN JUAN": [
+      "SAN JUAN",
+      "RAWSON",
+      "RIVADAVIA",
+      "CHIMBAS",
+      "CALINGASTA",
+      "SANTA LUCIA",
+      "CAUCETE",
+    ],
+    "ENTRE RIOS": [
+      "PARANA",
+      "CRESPO",
+      "VILLAGUAY",
+      "FEDERAL",
+      "SANTA ELENA",
+      "DIAMANTE",
+    ],
+    CORDOBA: [
+      "CORDOBA CAPITAL",
+      "ALTA GRACIA",
+      "VILLA CARLOS PAZ",
+      "MINA CLAVERO",
+    ],
+    TUCUMAN: ["MONTEROS", "CONCEPCION"],
+    "SANTIAGO DEL ESTERO": ["TERMAS DE RIO HONDO", "FRIAS"],
+  };
 
   function cargarProvincias() {
     const provinciaSelect = document.getElementById("cbx_provincia");
@@ -385,33 +394,33 @@ const { codcar, nombre } = Astro.props;
     }
   }
   function reCALLBACK(r) {
-      /* console.log(1, r); */
-      if (r) {
-        let element = document.getElementById('formButton');
-        element.removeAttribute("disabled");
-        element.classList.add("boton-rojo");
-        element.classList.remove("boton-gris");
-      } else {
-        alert("Demuestra que no eres un robot!");
-      }
+    /* console.log(1, r); */
+    if (r) {
+      let element = document.getElementById("formButton");
+      element.removeAttribute("disabled");
+      element.classList.add("boton-rojo");
+      element.classList.remove("boton-gris");
+    } else {
+      alert("Demuestra que no eres un robot!");
     }
+  }
   function check() {
-      let element = document.getElementById('formButton');
-      element.classList.add("hidden");
-      document.getElementById("spinnerContainer").classList.remove("hidden");
-      if (
-        document.getElementsByName("tel")[0].value.length +
+    let element = document.getElementById("formButton");
+    element.classList.add("hidden");
+    document.getElementById("spinnerContainer").classList.remove("hidden");
+    if (
+      document.getElementsByName("tel")[0].value.length +
         document.getElementsByName("cod_area")[0].value.length >
         1 &&
-        document.getElementsByName("tel")[0].value.length +
+      document.getElementsByName("tel")[0].value.length +
         document.getElementsByName("cod_area")[0].value.length <
         10
-      ) {
-        document
-          .getElementsByName("tel")[0]
-          .setCustomValidity("Escribe Telefono y Codigo de Area");
-      } else {
-        document.getElementsByName("tel")[0].setCustomValidity("");
-      }
+    ) {
+      document
+        .getElementsByName("tel")[0]
+        .setCustomValidity("Escribe Telefono y Codigo de Area");
+    } else {
+      document.getElementsByName("tel")[0].setCustomValidity("");
     }
+  }
 </script>
